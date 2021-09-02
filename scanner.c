@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include "scanner.h"
 
+//cambiar
 int main() {
    
     enum tokens { FDT, SEP, CAD, SPA };
