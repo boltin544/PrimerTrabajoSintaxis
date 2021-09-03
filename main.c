@@ -1,9 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
 #include "scanner.h"
 
-int main(int argc,char **argv) {
+int main() {
 
 const char* tokens[3] = {"Fin De Texto:", "Separador", "Cadena"}; //main.c
 enum tokens token;
