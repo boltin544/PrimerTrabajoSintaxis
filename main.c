@@ -1,31 +1,32 @@
 #include "scanner.h"
 
-int main() {
+int main(int argc, char *argv[]) {
 
-const char* tokens[3] = {"Fin De Texto:", "Separador", "Cadena"}; //main.c
+const char* tokens[3] = {"Fin De Texto : ", "Separador : ", "Cadena : "}; 
 enum tokens token;
+char vector[50];
 
 printf("ingresa el texto : ");
 printf("-------------------\n");
     do
     {  
-        token = get_token(i);           
+        token = get_token(vector);           
         switch(token)
         {
             case FDT:
-            printf(tokens[FDT]);             
+            printf(tokens[FDT]);
             break;
             case SEP:
             printf(tokens[SEP]);
-            printf(": %c", " , " , " \t\n");  
+            printf(" ,  \t\n");  
             break;
             case CAD:
             printf(tokens[CAD]);
-            for(int j = 0 ; j < i ; j++) 
+            for(int j = 0 ; vector[j] != '\0' ; j++) 
               {
-                printf(": %c", vector[j]); 
+                printf("%c", vector[j]); 
               }
-            i = 0 ;
+            printf("\n");  
         }
     } while(token != EOF);
 
@@ -33,4 +34,3 @@ printf("-------------------\n");
    
 	return 0;
 }
-

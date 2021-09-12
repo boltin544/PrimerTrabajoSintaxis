@@ -4,11 +4,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 
-int get_token(int i);
+int get_token(char*);
 enum tokens {FDT, SEP, CAD}; // scanner.h
-char vector[50];
-int i = 0;
 
 #endif
+
 
