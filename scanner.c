@@ -31,36 +31,33 @@ int get_token(char* vector) {
              {
                  *(vector + i) = caracter;
                  i++;
+                  
              }
 
-             caracterAnterior = caracter;
-             h++;
+            caracterAnterior = caracter;
+            h = 1;
 
             *(vector + i)  = '\0';
             return CAD;
-            
-
          } 
-    
+
+         if(h = 1)
+          {
+             if(caracterAnterior == ',')
+                {
+                  h = 0;
+                  return SEP;
+                }
+             else
+                {
+                  h = 0;
+                  return EOF;
+                }
+          }
+
      }
 
-        if(h > 0)
-         {
-         
-        if(caracterAnterior == ',')
-         {
-            return SEP; 
-         }
-         
-         else if(caracterAnterior == EOF)
-           {
-            return FDT; 
-         }
-
-
-           h = 0;
-
-         }
+        
 
 } 
 
@@ -75,6 +72,3 @@ OPCIONES : crear un caracter anterior para el while porque hay uno que pasa por 
 
 
 */
- 
-    
-            
