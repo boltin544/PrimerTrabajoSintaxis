@@ -41,7 +41,7 @@ int get_token(char* vector) {
             return CAD;
          } 
 
-         if(h = 1)
+         if(h == 1)
           {
              if(caracterAnterior == ',')
                 {
@@ -60,15 +60,3 @@ int get_token(char* vector) {
         
 
 } 
-
-
-/*
-
-OPCIONES : crear un caracter anterior para el while porque hay uno que pasa por alto , el tema es como
-            - uso un h++
-            - arriba del primer getchar
-            - abajo de todo
-            - o que podria hacer?
-
-
-*/
