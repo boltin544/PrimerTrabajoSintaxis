@@ -1,13 +1,10 @@
 #include "scanner.h"
 
-int get_token(char* vector) {
+int get_token(char vector[]) {
     
     int i = 0;
     char caracter; 
-    int tipoCaracter;
-    char caracterAnterior;
-    int h = 0;
-
+    
     caracter = getchar();
 
     if(!isspace(caracter)) 
@@ -24,36 +21,24 @@ int get_token(char* vector) {
          
          else
          {
-            *(vector + i) = caracter;
-            i++;
 
-            while((caracter = getchar()) != ',')
+            while( (caracter != ',') && (caracter != EOF))
              {
-                 *(vector + i) = caracter;
+                if(!isspace(caracter))
+                {
+                 vector[i] = caracter;
                  i++;
-                  
+                }
+               
+                 caracter = getchar(); 
              }
-
-            caracterAnterior = caracter;
-            h = 1;
-
-            *(vector + i)  = '\0';
+               ungetc(caracter , stdin);
+         
+            vector[i]  = '\0';
             return CAD;
          } 
 
-         if(h == 1)
-          {
-             if(caracterAnterior == ',')
-                {
-                  h = 0;
-                  return SEP;
-                }
-             else
-                {
-                  h = 0;
-                  return EOF;
-                }
-          }
+         
 
      }
 

@@ -6,7 +6,7 @@
 #include <ctype.h>
 #include <string.h>
 
-int get_token(char*);
+int get_token(char vector[]);
 enum tokens {FDT, SEP, CAD}; // scanner.h
 
 #endif
